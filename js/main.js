@@ -15,3 +15,17 @@ $(function () {
     }
   });
 });
+
+function getProductData() {
+  axios
+    .get(
+      `https://livejs-api.hexschool.io/api/livejs/v1/customer/${api_path}/products`
+    )
+    .then(function (response) {
+      console.log(response);
+    })
+    .catch(function (error) {
+      console.log(error);
+    });
+}
+getProductData();
