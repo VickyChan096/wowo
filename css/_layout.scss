@@ -13,45 +13,13 @@
   border-radius: 50%;
 }
 
-// Button樣式
-// .btn {
-//   display: inline-block;
-//   padding: 6px 12px;
-//   text-align: center;
-//   white-space: nowrap;
-//   user-select: none;
-//   border-radius: 20px;
-//   background-color: blue;
-//   transition: $trsSlow;
-//   cursor: pointer;
+body {
+  color: #000;
+  font-size: $fz-s;
+  font-weight: $fw-l;
+}
 
-//   &:hover {
-//     filter: brightness(120%);
-//   }
-// }
-
-// .btnPrimary {
-//   color:
-//   background-color:
-// }
-
-// .btnSecondary{
-//   color:
-//   background-color:
-// }
-
-// .btnTertiary{
-//   color:
-//   background-color:
-// }
-
-// body {
-//   color: #000;
-//   font-size:
-//   font-weight:
-// }
-
-// .container {
-//   margin: 0 auto;
-//   max-width: 1200px;
-// }
+.wrap {
+  margin: 0 auto;
+  max-width: 1100px;
+}

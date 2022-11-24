@@ -105,7 +105,7 @@ section {
 }
 
 body {
-  line-height: 1;
+  line-height: 1.5;
 }
 
 ol,
@@ -135,6 +135,7 @@ table {
 *::before,
 *::after {
   box-sizing: border-box;
+  transition: all 0.2s;
 }
 
 body {
@@ -181,12 +182,6 @@ input::placeholder {
   color: #f3f3f3;
 }
 
-.fa,
-.far,
-.fas {
-  font-family: "Font Awesome 5 Pro";
-}
-
 #toTop {
   z-index: 90;
   display: none;
@@ -202,8 +197,116 @@ input::placeholder {
   border-radius: 50%;
 }
 
-h1 {
-  padding-bottom: 2000px;
-  font-size: 48px;
-  text-align: center;
+body {
+  color: #000;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.wrap {
+  margin: 0 auto;
+  max-width: 1100px;
+}
+
+.nav {
+  border-bottom: 40px solid #000000;
+  margin-bottom: 30px;
+}
+.nav .wrap {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+}
+@media (max-width: 1100px) {
+  .nav .wrap {
+    padding: 0 15px;
+  }
+}
+.nav .wrap a {
+  display: block;
+  text-decoration: none;
+  color: #000000;
+  font-size: 16px;
+}
+.nav .wrap a:hover {
+  color: #6A33F8;
+}
+.nav__logo {
+  padding: 36px 0;
+  font-size: 1.5rem;
+}
+@media only screen and (max-width: 767px) {
+  .nav__logo {
+    padding: 15px;
+  }
+}
+.nav__logo:hover {
+  transform: scale(1.05);
+}
+.nav__menu {
+  display: flex;
+  flex-wrap: wrap;
+  background-color: #FFFFFF;
+}
+@media only screen and (max-width: 767px) {
+  .nav__menu {
+    position: absolute;
+    top: 61px;
+    left: 0;
+    right: 0;
+    width: 100%;
+    max-height: 0;
+    transition: all 0.2s;
+    overflow: hidden;
+    z-index: 10;
+  }
+}
+.nav__menu a {
+  padding: 36px 24px;
+  background-color: #FFFFFF;
+}
+@media only screen and (max-width: 767px) {
+  .nav__menu a {
+    text-align: center;
+    padding: 15px;
+    font-size: 1rem;
+  }
+  .nav__menu a:hover {
+    color: #fff !important;
+    background-color: #6A33F8;
+  }
+}
+@media only screen and (max-width: 767px) {
+  .nav__menu li {
+    width: 100%;
+  }
+}
+.nav__menu li:last-child a {
+  padding-right: 0;
+}
+@media only screen and (max-width: 767px) {
+  .nav__menu li:last-child a {
+    padding: 15px;
+  }
+}
+.nav__menu.openMenu {
+  max-height: 300px;
+}
+
+.menuToggle {
+  display: none;
+  cursor: pointer;
+}
+
+.menuToggle:hover {
+  color: #6A33FF;
+}
+
+@media (max-width: 767px) {
+  .menuToggle {
+    display: block;
+    font-size: 2rem;
+    padding: 15px;
+  }
 }/*# sourceMappingURL=main.css.map */

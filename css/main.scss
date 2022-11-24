@@ -1,10 +1,110 @@
 @import "variable"; // 字級、顏色、速度
-@import "reset"; 		// Reset、初始設定
-@import "mixin"; 		// Flex、@media
-@import "layout"; 	// layout、toTop、按鈕
+@import "reset"; // Reset、初始設定
+@import "mixin"; // Flex、@media
+@import "layout"; // layout、toTop、按鈕
 
-h1 {
-	padding-bottom: 2000px;
-	font-size: $fz-s * 3;
-	text-align: center;
+.nav {
+	border-bottom: 40px solid #000000;
+	margin-bottom: 30px;
+
+	.wrap {
+		@include disFlex($jc: space-between);
+		position: relative;
+
+		@media (max-width:1100px) {
+			padding: 0 15px;
+		}
+
+		a {
+			display: block;
+			text-decoration: none;
+			color: #000000;
+			font-size: $fz-s;
+
+			&:hover {
+				color: #6A33F8;
+			}
+		}
+	}
+
+	&__logo {
+		padding: 36px 0;
+		font-size: 1.5rem;
+		@include mobile{
+			padding: 15px;
+		}
+
+		&:hover {
+			transform: scale(1.05);
+		}
+	}
+
+	&__menu {
+		display: flex;
+		flex-wrap: wrap;
+		background-color: #FFFFFF;
+
+		@include mobile {
+			position: absolute;
+			top: 61px;
+			left: 0;
+			right: 0;
+			width: 100%;
+			max-height: 0;
+			transition: $tnsFast;
+			overflow: hidden;
+			z-index: 10;
+		}
+
+		a {
+			padding: 36px 24px;
+			background-color: #FFFFFF;
+
+			@include mobile {
+				text-align: center;
+				padding: 15px;
+				font-size: 1rem;
+
+				&:hover {
+					color: #fff !important;
+					background-color: #6A33F8;
+				}
+			}
+		}
+
+		li {
+			@include mobile {
+				width: 100%;
+			}
+		}
+
+		li:last-child a {
+			padding-right: 0;
+
+			@include mobile {
+				padding: 15px;
+			}
+		}
+	}
+
+	&__menu.openMenu {
+		max-height: 300px;
+	}
+}
+
+.menuToggle {
+	display: none;
+	cursor: pointer;
+}
+
+.menuToggle:hover {
+	color: #6A33FF;
+}
+
+@media (max-width: 767px) {
+	.menuToggle {
+		display: block;
+		font-size: 2rem;
+		padding: 15px;
+	}
 }

@@ -4,28 +4,14 @@
     align-items: $ai;
 }
 
-// mobile first
-// @mixin pad {
-//     @media only screen and (min-width: 768px) {
-//         @content;
-//     }
-// }
+@mixin pad {
+    @media only screen and (max-width: 992px) {
+        @content;
+    }
+}
 
-// @mixin desktop {
-//     @media only screen and (min-width: 992px) {
-//         @content;
-//     }
-// }
-
-// desktop first
-// @mixin pad {
-//     @media only screen and (max-width: 992px) {
-//         @content;
-//     }
-// }
-
-// @mixin mobile {
-//     @media only screen and (max-width: 767px) {
-//         @content;
-//     }
-// }
+@mixin mobile {
+    @media only screen and (max-width: 767px) {
+        @content;
+    }
+}
