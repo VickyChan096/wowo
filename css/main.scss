@@ -4,7 +4,7 @@
 @import "layout"; // layout、toTop、按鈕
 
 .nav {
-	border-bottom: 40px solid #000000;
+	border-bottom: 40px solid #000;
 	margin-bottom: 30px;
 
 	.wrap {
@@ -57,6 +57,7 @@
 
 		a {
 			padding: 36px 24px;
+			font-weight: $fw-l;
 			background-color: #FFFFFF;
 
 			@include mobile {
@@ -106,49 +107,180 @@
 	color: #6A33FF;
 }
 
-.banner {
-	position: relative;
-	background-image: url("https://github.com/hexschool/js-training/blob/main/%E7%AC%AC%E4%B9%9D%E9%80%B1%E4%B8%BB%E7%B7%9A%E4%BB%BB%E5%8B%99%E5%9C%96%E5%BA%AB/3ewLAKn.png?raw=true");
-	background-position: center center;
-	background-repeat: no-repeat;
-	background-size: cover;
-	min-height: 420px;
-	margin-bottom: 60px;
-}
-
-.banner-text {
-	position: absolute;
-	color: #FFFFFF;
-	font-size: 2rem;
-	left: 50px;
-	bottom: 50px;
-	font-weight: normal;
-}
-
-.section-title {
-	text-align: center;
-	font-size: 1.75rem;
+h3 {
 	margin-bottom: 30px;
-}
-
-.bedAdvantage {
-	display: -webkit-box;
-	display: -ms-flexbox;
-	display: flex;
-	-webkit-box-pack: justify;
-	-ms-flex-pack: justify;
-	justify-content: space-between;
-	margin-bottom: 60px;
-}
-
-.bedAdvantage-img {
-	max-height: 140px;
-	-o-object-fit: cover;
-	object-fit: cover;
-	margin-bottom: 10px;
-}
-
-.bedAdvantage-text {
+	font-size: $fz-l;
+	font-weight: $fw-l;
 	text-align: center;
-	font-size: 1.25rem;
+}
+
+.heroSection {
+	div {
+		position: relative;
+		margin-bottom: 60px;
+		min-height: 420px;
+		background-image: url("../images/hero-banner.png");
+		background-position: center center;
+		background-repeat: no-repeat;
+		background-size: cover;
+
+		h2 {
+			position: absolute;
+			left: 50px;
+			bottom: 50px;
+			color: #FFFFFF;
+			font-size: $fz-s * 2;
+			font-weight: $fw-l;
+		}
+	}
+
+	&__bedAdvantage {
+		display: flex;
+		justify-content: space-between;
+		margin-bottom: 60px;
+
+		img {
+			margin-bottom: 10px;
+			max-height: 140px;
+			// object-fit: cover;
+		}
+
+		p {
+			font-size: $fz-m;
+			text-align: center;
+		}
+	}
+}
+
+.furnitureCompare {
+	padding: 50px 0 60px 0;
+	background-color: #F8F8F8;
+
+	@include mobile {
+		padding: 50px 15px 60px;
+	}
+
+	&__tableWrap {
+		@include mobile {
+			overflow-x: scroll;
+		}
+
+		table {
+			width: 65%;
+			margin: 0 auto;
+
+			@include mobile {
+				width: 500px;
+			}
+
+			th,
+			td {
+				text-align: center;
+				padding: 15px 0;
+
+				@include mobile {
+					padding: 10px 0;
+				}
+			}
+
+			th {
+				font-size: $fz-m;
+				font-weight: $fw-l;
+
+				@include mobile {
+					font-size: $fz-s;
+				}
+			}
+
+			tr {
+				border-bottom: 1px solid #B9B9B9;
+			}
+
+			tr td:first-child {
+				text-align: left;
+			}
+
+			.material-icons {
+				color: #6A33FF;
+				transform: scale(1.5);
+			}
+
+			.textMuted {
+				color: #797979;
+			}
+		}
+	}
+}
+
+.recommendation {
+	padding: 60px 0;
+	background-color: #301E5F;
+
+	@include mobile {
+		padding: 60px 15px;
+	}
+
+	h3 {
+		color: #fff;
+	}
+
+	&__wall {
+		overflow-x: scroll;
+		scrollbar-width: none;
+
+		&::-webkit-scrollbar {
+			display: none;
+		}
+
+		&__top {
+			display: flex;
+			margin-left: 95px;
+			margin-bottom: 20px;
+		}
+
+		&__bottom {
+			display: flex;
+		}
+	}
+}
+
+.recCard {
+	display: flex;
+	margin-left: 30px;
+	min-width: 320px;
+	background-color: #FFFFFF;
+
+	img {
+		user-select: none;
+		// 元素不能被拖動。在通過選中后可拖拽。
+		-webkit-user-drag: none;
+	}
+
+	&__content {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		padding-left: 16px;
+
+		&__info {
+			display: flex;
+			align-items: center;
+			margin-bottom: 3px;
+
+			img {
+				margin-right: 8px;
+				width: 40px;
+				border-radius: 50%;
+			}
+
+			p {
+				font-weight: $fw-l;
+			}
+
+			span {
+				color: #6A33F8;
+				font-size: $fz-s * 0.8;
+			}
+		}
+	}
 }

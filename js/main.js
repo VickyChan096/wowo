@@ -1,48 +1,48 @@
-// 原作者JS start
+// 原作者JS start ---->
 const _menuOpenBtn = document.querySelector('.menuToggle');
 const _linkBtn = document.querySelectorAll('.nav__menu a');
 const _menu = document.querySelector('.nav__menu');
 
-// document.addEventListener('DOMContentLoaded', function () {
-//   const ele = document.querySelector('.recommendation-wall');
-//   ele.style.cursor = 'grab';
-//   let pos = {
-//     top: 0,
-//     left: 0,
-//     x: 0,
-//     y: 0,
-//   };
-//   const mouseDownHandler = function (e) {
-//     ele.style.cursor = 'grabbing';
-//     ele.style.userSelect = 'none';
-//     pos = {
-//       left: ele.scrollLeft,
-//       top: ele.scrollTop,
-//       // Get the current mouse position
-//       x: e.clientX,
-//       y: e.clientY,
-//     };
-//     document.addEventListener('mousemove', mouseMoveHandler);
-//     document.addEventListener('mouseup', mouseUpHandler);
-//   };
-//   const mouseMoveHandler = function (e) {
-//     // How far the mouse has been moved
-//     const dx = e.clientX - pos.x;
-//     const dy = e.clientY - pos.y;
-//     // Scroll the element
-//     ele.scrollTop = pos.top - dy;
-//     ele.scrollLeft = pos.left - dx;
-//   };
-//   const mouseUpHandler = function () {
-//     ele.style.cursor = 'grab';
-//     ele.style.removeProperty('user-select');
-//     document.removeEventListener('mousemove', mouseMoveHandler);
-//     document.removeEventListener('mouseup', mouseUpHandler);
-//   };
-//   // Attach the handler
-//   ele.addEventListener('mousedown', mouseDownHandler);
-// });
-
+// 推薦牆滑鼠點擊拖移
+document.addEventListener('DOMContentLoaded', function () {
+  const element = document.querySelector('.recommendation__wall');
+  element.style.cursor = 'grab';
+  let position = {
+    top: 0,
+    left: 0,
+    x: 0,
+    y: 0,
+  };
+  const mouseDownHandler = function (e) {
+    element.style.cursor = 'grabbing';
+    element.style.userSelect = 'none';
+    position = {
+      left: element.scrollLeft,
+      top: element.scrollTop,
+      // Get the current mouse position
+      x: e.clientX,
+      y: e.clientY,
+    };
+    document.addEventListener('mousemove', mouseMoveHandler);
+    document.addEventListener('mouseup', mouseUpHandler);
+  };
+  const mouseMoveHandler = function (e) {
+    // How far the mouse has been moved
+    const dx = e.clientX - position.x;
+    const dy = e.clientY - position.y;
+    // Scroll the element
+    element.scrollTop = position.top - dy;
+    element.scrollLeft = position.left - dx;
+  };
+  const mouseUpHandler = function () {
+    element.style.cursor = 'grab';
+    element.style.removeProperty('user-select');
+    document.removeEventListener('mousemove', mouseMoveHandler);
+    document.removeEventListener('mouseup', mouseUpHandler);
+  };
+  // Attach the handler
+  element.addEventListener('mousedown', mouseDownHandler);
+});
 
 // 漢堡圖toggle
 function menuToggle() {
@@ -61,7 +61,7 @@ _linkBtn.forEach((item) => {
 function closeMenu() {
   _menu.classList.remove('openMenu');
 }
-// 原作者JS end
+// 原作者JS end <----
 
 function getProductData() {
   axios
