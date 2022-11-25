@@ -136,6 +136,7 @@ table {
 *::after {
   box-sizing: border-box;
   transition: all 0.2s;
+  outline: 1px solid #aaa;
 }
 
 body {
@@ -227,14 +228,13 @@ body {
   display: block;
   text-decoration: none;
   color: #000000;
-  font-size: 16px;
+  font-size: 20px;
 }
 .nav .wrap a:hover {
   color: #6A33F8;
 }
 .nav__logo {
   padding: 36px 0;
-  font-size: 1.5rem;
 }
 @media only screen and (max-width: 767px) {
   .nav__logo {
@@ -257,7 +257,6 @@ body {
     right: 0;
     width: 100%;
     max-height: 0;
-    transition: all 0.2s;
     overflow: hidden;
     z-index: 10;
   }
@@ -270,7 +269,6 @@ body {
   .nav__menu a {
     text-align: center;
     padding: 15px;
-    font-size: 1rem;
   }
   .nav__menu a:hover {
     color: #fff !important;
@@ -298,15 +296,57 @@ body {
   display: none;
   cursor: pointer;
 }
+@media only screen and (max-width: 767px) {
+  .menuToggle {
+    display: block;
+    font-size: 28px;
+    padding: 15px;
+  }
+}
 
 .menuToggle:hover {
   color: #6A33FF;
 }
 
-@media (max-width: 767px) {
-  .menuToggle {
-    display: block;
-    font-size: 2rem;
-    padding: 15px;
-  }
+.banner {
+  position: relative;
+  background-image: url("https://github.com/hexschool/js-training/blob/main/%E7%AC%AC%E4%B9%9D%E9%80%B1%E4%B8%BB%E7%B7%9A%E4%BB%BB%E5%8B%99%E5%9C%96%E5%BA%AB/3ewLAKn.png?raw=true");
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  min-height: 420px;
+  margin-bottom: 60px;
+}
+
+.banner-text {
+  position: absolute;
+  color: #FFFFFF;
+  font-size: 2rem;
+  left: 50px;
+  bottom: 50px;
+  font-weight: normal;
+}
+
+.section-title {
+  text-align: center;
+  font-size: 1.75rem;
+  margin-bottom: 30px;
+}
+
+.bedAdvantage {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 60px;
+}
+
+.bedAdvantage-img {
+  max-height: 140px;
+  -o-object-fit: cover;
+  object-fit: cover;
+  margin-bottom: 10px;
+}
+
+.bedAdvantage-text {
+  text-align: center;
+  font-size: 1.25rem;
 }/*# sourceMappingURL=main.css.map */

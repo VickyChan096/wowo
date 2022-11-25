@@ -1,20 +1,7 @@
-// toTop
-$(function () {
-  // toTop
-  $('#toTop').click(function () {
-    $('html,body').animate({ scrollTop: 0 }, 1000);
-    return false;
-  });
-
-  // toTop按鈕淡入淡出
-  $(window).scroll(function () {
-    if ($(this).scrollTop() > 200) {
-      $('#toTop').fadeIn();
-    } else {
-      $('#toTop').fadeOut();
-    }
-  });
-});
+// 原作者JS start
+const _menuOpenBtn = document.querySelector('.menuToggle');
+const _linkBtn = document.querySelectorAll('.nav__menu a');
+const _menu = document.querySelector('.nav__menu');
 
 // document.addEventListener('DOMContentLoaded', function () {
 //   const ele = document.querySelector('.recommendation-wall');
@@ -57,26 +44,24 @@ $(function () {
 // });
 
 
-// menu 切換
-let menuOpenBtn = document.querySelector('.menuToggle');
-let linkBtn = document.querySelectorAll('.nav__menu a');
-let menu = document.querySelector('.nav__menu');
-menuOpenBtn.addEventListener('click', menuToggle);
-linkBtn.forEach((item) => {
-  item.addEventListener('click', closeMenu);
-});
-
+// 漢堡圖toggle
 function menuToggle() {
-  if (menu.classList.contains('openMenu')) {
-    menu.classList.remove('openMenu');
+  if (_menu.classList.contains('openMenu')) {
+    _menu.classList.remove('openMenu');
   } else {
-    menu.classList.add('openMenu');
+    _menu.classList.add('openMenu');
   }
 }
+_menuOpenBtn.addEventListener('click', menuToggle);
 
+// 點擊menu的選項後關閉menu
+_linkBtn.forEach((item) => {
+  item.addEventListener('click', closeMenu);
+});
 function closeMenu() {
-  menu.classList.remove('openMenu');
+  _menu.classList.remove('openMenu');
 }
+// 原作者JS end
 
 function getProductData() {
   axios
@@ -91,3 +76,21 @@ function getProductData() {
     });
 }
 getProductData();
+
+
+$(function () {
+  // toTop
+  $('#toTop').click(function () {
+    $('html,body').animate({ scrollTop: 0 }, 1000);
+    return false;
+  });
+
+  // toTop按鈕淡入淡出
+  $(window).scroll(function () {
+    if ($(this).scrollTop() > 200) {
+      $('#toTop').fadeIn();
+    } else {
+      $('#toTop').fadeOut();
+    }
+  });
+});
