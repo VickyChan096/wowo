@@ -251,7 +251,7 @@ body {
 @media only screen and (max-width: 767px) {
   .nav__menu {
     position: absolute;
-    top: 61px;
+    top: 60px;
     left: 0;
     right: 0;
     width: 100%;
