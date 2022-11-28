@@ -298,84 +298,44 @@
     </section>
 
     <section class="wrap product">
-      <select name="" class="product__select">
+      <select name="productType" class="product__select">
         <option value="全部" selected>全部</option>
         <option value="床架">床架</option>
         <option value="收納">收納</option>
         <option value="窗簾">窗簾</option>
       </select>
       <ul class="product__list">
-        <li class="productCard">
-          <h5>新品</h5>
-          <img src="images/product-1.png" />
-          <button>加入購物車</button>
-          <h4>Antony 雙人床架／雙人加大</h4>
-          <del>NT$18,000</del>
-          <p><span>NT$</span>12,000</p>
-        </li>
-        <li class="productCard">
-          <h5>新品</h5>
-          <img src="images/product-2.png" />
-          <button>加入購物車</button>
-          <h4>Antony 雙人床架／雙人加大</h4>
-          <del>NT$18,000</del>
-          <p><span>NT$</span>12,000</p>
-        </li>
-        <li class="productCard">
-          <h5>新品</h5>
-          <img src="images/product-3.png" />
-          <button>加入購物車</button>
-          <h4>Antony 雙人床架／雙人加大</h4>
-          <del>NT$18,000</del>
-          <p><span>NT$</span>12,000</p>
-        </li>
-        <li class="productCard">
-          <h5>新品</h5>
-          <img src="images/product-4.png" />
-          <button>加入購物車</button>
-          <h4>Antony 雙人床架／雙人加大</h4>
-          <del>NT$18,000</del>
-          <p><span>NT$</span>12,000</p>
-        </li>
+        <li style="margin: 0 auto"><img src="images/loading.gif" /></li>
       </ul>
     </section>
 
     <section class="cart">
       <h3>我的購物車</h3>
-      <div class="cartWrap">
+      <div class="wrap cartWrap">
         <table class="cart__table">
-          <tr>
-            <th width="40%">品項</th>
-            <th width="15%">單價</th>
-            <th width="15%">數量</th>
-            <th width="15%">金額</th>
-            <th width="15%"></th>
-          </tr>
-          <tr>
-            <td>
-              <div class="cart__table__item">
-                <img src="images/product-4-s.png" />
-                <p>Antony 雙人床架／雙人加大</p>
-              </div>
-            </td>
-            <td><span>NT$</span>12,000</td>
-            <td>1</td>
-            <td><span>NT$</span>12,000</td>
-            <td class="deleteBtn">
-              <a href="#" class="material-icons"> clear </a>
-            </td>
-          </tr>
-          <tr>
-            <td>
-              <a href="#" class="deleteAllBtn">刪除所有品項</a>
-            </td>
-            <td></td>
-            <td></td>
-            <td>
-              <p>總金額</p>
-            </td>
-            <td><span>NT$</span>13,980</td>
-          </tr>
+          <thead>
+            <tr>
+              <th width="40%">品項</th>
+              <th width="15%">單價</th>
+              <th width="12%">數量</th>
+              <th width="20%">金額</th>
+              <th width="3%"></th>
+            </tr>
+          </thead>
+          <tbody class="cart__table__tbody"></tbody>
+          <tfoot>
+            <tr>
+              <td>
+                <a href="#" class="deleteAllBtn">刪除所有品項</a>
+              </td>
+              <td></td>
+              <td></td>
+              <td>
+                <p>總金額</p>
+              </td>
+              <td class="js-total"><span>NT$</span>111</td>
+            </tr>
+          </tfoot>
         </table>
       </div>
     </section>
@@ -391,8 +351,7 @@
               class="formGroup__inputWrap__input"
               id="customerName"
               placeholder="請輸入姓名"
-              name="姓名"
-            />
+              name="姓名"/>
             <p data-message="姓名">必填</p>
           </div>
         </div>
@@ -405,7 +364,7 @@
               id="customerPhone"
               placeholder="請輸入電話"
               name="電話"
-            />
+              value="0910110110"/>
             <p data-message="電話">必填</p>
           </div>
         </div>
@@ -418,7 +377,7 @@
               id="customerEmail"
               placeholder="請輸入 Email"
               name="Email"
-            />
+              value="s123@gmail.com"/>
             <p data-message="Email">必填</p>
           </div>
         </div>
@@ -431,7 +390,7 @@
               id="customerAddress"
               placeholder="請輸入寄送地址"
               name="寄送地址"
-            />
+              value="台灣台北"/>
             <p data-message="寄送地址">必填</p>
           </div>
         </div>
@@ -441,8 +400,7 @@
             <select
               id="tradeWay"
               class="formGroup__inputWrap__input"
-              name="交易方式"
-            >
+              name="交易方式">
               <option value="ATM" selected>ATM</option>
               <option value="信用卡">信用卡</option>
               <option value="超商付款">超商付款</option>

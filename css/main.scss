@@ -4,8 +4,7 @@
 @import "layout"; // layout、toTop、按鈕
 
 .nav {
-	border-bottom: 40px solid #000;
-	margin-bottom: 30px;
+	border-bottom: 40px solid $C2ND; margin-bottom: 30px;
 
 	.wrap {
 		@include disFlex($jc: space-between);
@@ -18,11 +17,11 @@
 		a {
 			display: block;
 			text-decoration: none;
-			color: #000000;
+			color: $C2ND;
 			font-size: $fz-m;
 
 			&:hover {
-				color: #6A33F8;
+				color: $C1ST;
 			}
 		}
 	}
@@ -42,7 +41,7 @@
 	&__menu {
 		display: flex;
 		flex-wrap: wrap;
-		background-color: #FFFFFF;
+		background-color: #FFF;
 
 		@include mobile {
 			position: absolute;
@@ -58,7 +57,7 @@
 		a {
 			padding: 36px 24px;
 			font-weight: $fw-l;
-			background-color: #FFFFFF;
+			background-color: #FFF;
 
 			@include mobile {
 				text-align: center;
@@ -66,7 +65,7 @@
 
 				&:hover {
 					color: #fff !important;
-					background-color: #6A33F8;
+					background-color: $C1ST;
 				}
 			}
 		}
@@ -104,7 +103,7 @@
 }
 
 .menuToggle:hover {
-	color: #6A33FF;
+	color: $C1ST;
 }
 
 h3 {
@@ -128,7 +127,7 @@ h3 {
 			position: absolute;
 			left: 50px;
 			bottom: 50px;
-			color: #FFFFFF;
+			color: #FFF;
 			font-size: $fz-s * 2;
 			font-weight: $fw-l;
 		}
@@ -193,7 +192,7 @@ h3 {
 			}
 
 			tr {
-				border-bottom: 1px solid #B9B9B9;
+				border-bottom: 1px solid $C4TH;
 			}
 
 			tr td:first-child {
@@ -201,7 +200,7 @@ h3 {
 			}
 
 			.material-icons {
-				color: #6A33FF;
+				color: $C1ST;
 				transform: scale(1.5);
 			}
 
@@ -214,7 +213,7 @@ h3 {
 
 .recommendation {
 	padding: 60px 0;
-	background-color: #301E5F;
+	background-color: $C3RD;
 
 	@include mobile {
 		padding: 60px 15px;
@@ -278,7 +277,7 @@ h3 {
 			}
 
 			span {
-				color: #6A33F8;
+				color: $C1ST;
 				font-size: $fz-s * 0.8;
 			}
 		}
@@ -308,7 +307,7 @@ h3 {
 			position: absolute;
 			top: 49px;
 			right: -55px;
-			border: 10px solid #000000;
+			border: 10px solid $C2ND;
 			border-top: 10px solid transparent;
 			border-right: 10px solid transparent;
 			border-bottom: 10px solid transparent;
@@ -316,7 +315,7 @@ h3 {
 			@include mobile {
 				position: static;
 				margin-top: 25px;
-				border: 10px solid #000000;
+				border: 10px solid $C2ND;
 				border-left: 10px solid transparent;
 				border-right: 10px solid transparent;
 				border-bottom: 10px solid transparent;
@@ -338,7 +337,7 @@ h3 {
 		margin-bottom: 8px;
 		width: 115px;
 		height: 115px;
-		border: 3px solid #000000;
+		border: 3px solid $C2ND;
 		border-radius: 50%;
 
 		@include mobile {
@@ -365,7 +364,7 @@ h3 {
 		min-height: 38px;
 		min-width: 255px;
 		color: #797979;
-		border: 1px solid #B9B9B9;
+		border: 1px solid $C4TH;
 		border-radius: 5px;
 		text-indent: 10px;
 	}
@@ -383,6 +382,10 @@ h3 {
 	width: 23%;
 	margin-bottom: 30px;
 
+	&:hover .description p {
+		display: block;
+	}
+
 	@include pad {
 		width: 48%;
 	}
@@ -397,15 +400,36 @@ h3 {
 		right: -5px;
 		padding: 4px 8px;
 		color: #ffffff;
-		background-color: #6A33F8;
+		border-radius: 4px 0 0 4px;
+		background-color: $C1ST;
+		z-index: 11;
 	}
 
-	img {
-		max-height: 250px;
-		min-height: 200px;
-		width: 100%;
-		object-fit: cover;
-		object-position: 50% 70%;
+	.description {
+		position: relative;
+		overflow: hidden;
+
+		img {
+			max-height: 250px;
+			min-height: 200px;
+			width: 100%;
+			object-fit: cover;
+			object-position: 50% 70%;
+		}
+
+		p {
+			position: absolute;
+			bottom: 0px;
+			left: 0;
+			display: none;
+			width: 100%;
+			max-height: 150px;
+			padding: 4px;
+			color: #fff;
+			font-size: $fz-s;
+			text-align: center;
+			background-color: rgba(0, 0, 0, 0.5);
+		}
 	}
 
 	button {
@@ -414,10 +438,10 @@ h3 {
 		width: 100%;
 		font-size: $fz-m;
 		color: #ffffff;
-		background-color: #000000;
+		background-color: $C2ND;
 
 		&:hover {
-			background-color: #301E5F;
+			background-color: $C3RD;
 		}
 	}
 
@@ -432,7 +456,8 @@ h3 {
 	}
 
 	del {
-		color: #797979;
+		display: block;
+		color: $C4TH;
 		font-size: $fz-s * 0.5;
 
 		@include pad {
@@ -471,6 +496,10 @@ h3 {
 			width: 700px;
 		}
 
+		tfoot tr {
+			border-bottom: 0px;
+		}
+
 		th,
 		td {
 			padding: 15px;
@@ -480,23 +509,18 @@ h3 {
 		th {
 			color: #fff;
 			text-align: left;
-			background-color: #B9B9B9;
+			background-color: $C4TH;
 		}
 
 		tr {
-			border-bottom: 1px solid #B9B9B9;
-
-			&:first-child,
-			&:last-child {
-				border-bottom: 0;
-			}
+			border-bottom: 1px solid $C4TH;
 
 			span {
 				font-size: $fz-s * 0.5;
 			}
 		}
 
-		&__item {
+		.cartItem {
 			display: flex;
 			align-items: center;
 
@@ -514,11 +538,11 @@ h3 {
 	a {
 		display: inline-block;
 		padding: 10px;
-		color: #000000;
+		color: $C2ND;
 		font-size: $fz-l;
 
 		&:hover {
-			color: #6A33F8;
+			color: $C1ST;
 			transform: scale(1.3);
 		}
 	}
@@ -527,13 +551,13 @@ h3 {
 .deleteAllBtn {
 	display: inline-block;
 	padding: 5px 15px;
-	color: #B9B9B9;
-	border: 1.3px solid #B9B9B9;
+	color: $C4TH;
+	border: 1.3px solid $C4TH;
 	border-radius: 5px;
 
 	&:hover {
 		color: #FFFFFF;
-		background-color: #000000;
+		background-color: $C2ND;
 	}
 }
 
@@ -550,11 +574,11 @@ h3 {
 			color: #FFF;
 			font-size: $fz-m;
 			border-radius: 4px;
-			background-color: #000;
+			background-color: $C2ND;
 			cursor: pointer;
 
 			&:hover {
-				background-color: #301E5F;
+				background-color: $C3RD;
 			}
 		}
 	}
